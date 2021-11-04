@@ -1,7 +1,4 @@
-# KidsCanCode - Game Development with Pygame video series
-# Tile-based game - Part 1
-# Project setup
-# Video link: https://youtu.be/3UxnelT9aCo
+
 import pygame as pg
 import sys
 from os import path
@@ -28,13 +25,14 @@ class Game:
         # initialize all variables and do all the setup for a new game
         self.all_sprites = pg.sprite.Group()
         self.walls = pg.sprite.Group()
-        self.player = Player(self, 10, 10)
         for row, tiles in enumerate(self.map_data):
             for col, tile in enumerate(tiles):
                 if tile == '1':
                     Wall(self, col, row)
                 if tile == 'P':
                     self.player = Player(self, col, row)
+                if tile == '2':
+                    Fire(self, col, row)
 
 
     def run(self):

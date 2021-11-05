@@ -5,6 +5,7 @@ from os import path
 from settings import *
 from sprites import *
 from tilemap import *
+import pytmx
 
 class Game:
     def __init__(self):
@@ -17,22 +18,34 @@ class Game:
 
     def load_data(self):
         game_folder = path.dirname(__file__)
-        self.map = Map(path.join(game_folder, 'map2.txt'))
+        img_folder =path.join(game_folder, 'img')
+        map_folder = path.join(game_folder, 'map')
+        self.map = TiledMap(path.join(game_folder, 'tiletest.tmx'))
+        self.map_img = self.map.make_map()
+        self.map_rect = self.map_img.get_rect()
+        self.player_img = pg.image.load(path.join(img_folder, PLAYER_IMG)).convert_alpha()
+        #self.mob_img = pg.image.load(path.join(img_folder, MOB_IMG)).convert_alpha()
+        self.wall_img = pg.image.load(path.join(img_folder, WALL_IMG)).convert_alpha()
+        self.wall_img = pg.transform.scale(self.wall_img, (TILESIZE, TILESIZE))
+        self.water_img = pg.image.load(path.join(img_folder, WATER_IMG)).convert_alpha()
+        self.water_img = pg.transform.scale(self.wall_img, (TILESIZE, TILESIZE))
 
     def new(self):
         # initialize all variables and do all the setup for a new game
         self.all_sprites = pg.sprite.Group()
         self.walls = pg.sprite.Group()
-        for row, tiles in enumerate(self.map.data):
-            for col, tile in enumerate(tiles):
-                if tile == '1':
-                    Wall(self, col, row)
-                if tile == 'P':
-                    self.player = Player(self, col, row)
-                if tile == '2':
-                    Fire(self, col, row)
-                if tile == '3':
-                    Water(self, col, row)
+        #for row, tiles in enumerate(self.map.data):
+            #for col, tile in enumerate(tiles):
+                #if tile == '1':
+                    #Wall(self, col, row)
+                #if tile == 'P':
+                    #self.player = Player(self, col, row)
+                #if tile == '2':
+                    #Fire(self, col, row)
+                #if tile == '3':
+                    #Water(self, col, row)
+        self.player = Player(self, 5, 5)
+
         self.camera = Camera(self.map.width, self.map.height)
 
 
@@ -61,8 +74,10 @@ class Game:
             pg.draw.line(self.screen, LIGHTGREY, (0, y), (WIDTH, y))
 
     def draw(self):
-        self.screen.fill(BGCOLOR)
-        self.draw_grid()
+        pg.display.set_caption("{:.2f}".format(self.clock.get_fps()))
+        #self.screen.fill(BGCOLOR)
+        self.scsreen.blit(self.map_img, self.camera.apply_rect(self.map_rect))
+        #self.draw_grid()
         for sprite in self.all_sprites:
             self.screen.blit(sprite.image, self.camera.apply(sprite))
         pg.display.flip()

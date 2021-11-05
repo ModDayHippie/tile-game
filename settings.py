@@ -13,9 +13,16 @@ BROWN =(107, 62, 4)
 WIDTH = 640   # 16 * 64 or 32 * 32 or 64 * 16
 HEIGHT = 480  # 16 * 48 or 32 * 24 or 64 * 12
 FPS = 60
-TITLE = "Tilemap Demo"
+TITLE = "Tilemap Game"
 BGCOLOR = GREEN
 
 TILESIZE = 16
 GRIDWIDTH = WIDTH / TILESIZE
 GRIDHEIGHT = HEIGHT / TILESIZE
+
+
+# Player Settings
+PLAYER_IMG = 'manBlue_stand.png'
+WALL_IMG = 'tile_406.png'
+FLOOR_IMG = 'tile_69.png'
+WATER_IMG = 'tile_19.png'

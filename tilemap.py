@@ -1,5 +1,9 @@
 import pygame as pg
+import pytmx
 from settings import *
+
+def collide_hit_rect(one, two):
+    return one.hit_rect.colliderect(two.rect)
 
 class Map:
     def __init__(self, filename):
@@ -13,7 +17,6 @@ class Map:
         self.width = self.tilewidth * TILESIZE
         self.height = self.tileheight * TILESIZE
 
-#these lines connect tile app to in game
 class TiledMap:
     def __init__(self, filename):
         tm = pytmx.load_pygame(filename, pixelalpha=True)
@@ -36,7 +39,6 @@ class TiledMap:
         self.render(temp_surface)
         return temp_surface
 
-
 class Camera:
     def __init__(self, width, height):
         self.camera = pg.Rect(0, 0, width, height)
@@ -50,8 +52,8 @@ class Camera:
         return rect.move(self.camera.topleft)
 
     def update(self, target):
-        x = -target.rect.x + int(WIDTH / 2)
-        y = -target.rect.y + int(HEIGHT / 2)
+        x = -target.rect.centerx + int(WIDTH / 2)
+        y = -target.rect.centery + int(HEIGHT / 2)
 
         # limit scrolling to map size
         x = min(0, x)  # left

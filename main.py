@@ -1,4 +1,4 @@
-# 
+#
 # Base code provided by KidsCanCode 2017
 import pygame as pg
 import sys
@@ -101,7 +101,7 @@ class Game:
         self.mobs = pg.sprite.Group()
         self.bullets = pg.sprite.Group()
         self.items = pg.sprite.Group()
-        self.map = TiledMap(path.join(self.map_folder, 'alpha2.tmx'))
+        self.map = TiledMap(path.join(self.map_folder, 'alpha.tmx'))
         self.map_img = self.map.make_map()
         self.map.rect = self.map_img.get_rect()
         for tile_object in self.map.tmxdata.objects:

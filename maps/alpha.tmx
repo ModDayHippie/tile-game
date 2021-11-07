@@ -322,7 +322,7 @@
   <object id="87" x="318" y="566.667" width="4" height="0.666667"/>
   <object id="88" name="wall" x="275.333" y="560.667" width="106.667" height="12"/>
   <object id="89" name="wall" x="512.667" y="560" width="102.667" height="14"/>
-  <object id="90" name="player" x="3321.82" y="793.766" width="20.6667" height="19.3333"/>
+  <object id="90" name="player" x="462.487" y="339.766" width="20.6667" height="19.3333"/>
   <object id="91" name="wall" x="624" y="202.667" width="16" height="364"/>
   <object id="93" name="wall" x="255.333" y="190.667" width="366.667" height="17.3333"/>
   <object id="94" name="wall" x="256" y="208" width="16" height="367.333"/>

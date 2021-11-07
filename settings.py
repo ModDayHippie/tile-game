@@ -37,7 +37,7 @@ WEAPONS = {}
 WEAPONS['pistol'] = {'bullet_speed': 500,
                      'bullet_lifetime': 1000,
                      'rate': 250,
-                     'kickback': 50,
+                     'kickback': 200,
                      'spread': 5,
                      'damage': 10,
                      'bullet_size': 'lg',
@@ -67,6 +67,9 @@ MUZZLE_FLASHES = ['whitePuff15.png', 'whitePuff16.png', 'whitePuff17.png',
 SPLAT = 'splat green.png'
 FLASH_DURATION = 50
 DAMAGE_ALPHA = [i for i in range(0, 255, 55)]
+NIGHT_COLOR = (20, 20, 20)
+LIGHT_RADIUS = (500, 500)
+LIGHT_MASK = "light_350_soft.png"
 
 # Layers
 WALL_LAYER = 1
@@ -80,8 +83,8 @@ ITEMS_LAYER = 1
 ITEM_IMAGES = {'health': 'health_pack.png',
                'shotgun': 'obj_shotgun.png'}
 HEALTH_PACK_AMOUNT = 20
-BOB_RANGE = 15
-BOB_SPEED = 0.4
+BOB_RANGE = 10
+BOB_SPEED = 0.3
 
 # Sounds
 BG_MUSIC = 'doom.mp3'

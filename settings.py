@@ -15,7 +15,7 @@ CYAN = (0, 255, 255)
 # game settings
 WIDTH = 1024   # 16 * 64 or 32 * 32 or 64 * 16
 HEIGHT = 768  # 16 * 48 or 32 * 24 or 64 * 12
-FPS = 60
+FPS = 90
 TITLE = "Tilemap Demo"
 BGCOLOR = BROWN
 
@@ -46,6 +46,18 @@ BULLET_DAMAGE = 10
 MOB_IMG = 'zombie1_hold.png'
 MOB_SPEED = 150
 MOB_HIT_RECT = pg.Rect(0, 0, 30, 30)
-MOB_HEALTH = 100
+MOB_HEALTH = 50
 MOB_DAMAGE = 10
 MOB_KNOCKBACK = 20
+DETECT_RADIUS = 300
+
+# Sounds
+BG_MUSIC = "doom.mp3"
+PLAYER_HIT_SOUNDS = 'death.mp3'
+#ZOMBIE_MOAN_SOUNDS = ['brains2.wav', 'brains3.wav', 'zombie-roar-1.wav', 'zombie-roar-2.wav',
+                     # 'zombie-roar-3.wav', 'zombie-roar-5.wav', 'zombie-roar-6.wav', 'zombie-roar-7.wav']
+#ZOMBIE_HIT_SOUNDS = ['splat-15.wav']
+#WEAPON_SOUNDS_GUN = ['sfx_weapon_singleshot2.wav']
+#EFFECTS_SOUNDS = {'level_start': 'level_start.wav',
+                 # 'health_up': 'health_pack.wav'}
+

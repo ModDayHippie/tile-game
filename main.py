@@ -70,7 +70,7 @@ class Game:
         self.title_font = path.join(img_folder, 'ZOMBIE.TTF')
         self.dim_screen = pg.Surface(self.screen.get_size()).convert_alpha()
         self.dim_screen.fill((0, 0, 0, 180))
-        self.map = TiledMap(path.join(map_folder, 'level1.tmx'))
+        self.map = TiledMap(path.join(map_folder, 'alpha2.tmx'))
         self.map_img = self.map.make_map()
         self.map.rect = self.map_img.get_rect()
         self.player_img = pg.image.load(path.join(img_folder, PLAYER_IMG)).convert_alpha()

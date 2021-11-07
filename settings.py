@@ -44,12 +44,21 @@ WEAPONS['pistol'] = {'bullet_speed': 500,
                      'bullet_count': 1}
 WEAPONS['shotgun'] = {'bullet_speed': 400,
                       'bullet_lifetime': 500,
-                      'rate': 900,
+                      'rate': 600,
                       'kickback': 300,
                       'spread': 20,
                       'damage': 5,
                       'bullet_size': 'sm',
                       'bullet_count': 12}
+WEAPONS['ak'] = {'bullet_speed': 700,
+                      'bullet_lifetime': 1500,
+                      #lower number for rate is faster
+                      'rate': 100,
+                      'kickback': 400,
+                      'spread': 20,
+                      'damage': 5,
+                      'bullet_size': 'sm',
+                      'bullet_count': 1}
 
 # Mob settings
 MOB_IMG = 'zombie1_hold.png'
@@ -81,7 +90,8 @@ ITEMS_LAYER = 1
 
 # Items
 ITEM_IMAGES = {'health': 'health_pack.png',
-               'shotgun': 'obj_shotgun.png'}
+               'shotgun': 'obj_shotgun.png',
+               'ak': 'obj_ak.png'}
 HEALTH_PACK_AMOUNT = 20
 BOB_RANGE = 10
 BOB_SPEED = 0.3
@@ -93,7 +103,8 @@ ZOMBIE_MOAN_SOUNDS = ['brains2.wav', 'brains3.wav', 'zombie-roar-1.wav', 'zombie
                       'zombie-roar-3.wav', 'zombie-roar-5.wav', 'zombie-roar-6.wav', 'zombie-roar-7.wav']
 ZOMBIE_HIT_SOUNDS = ['splat-15.wav']
 WEAPON_SOUNDS = {'pistol': ['pistol.wav'],
-                 'shotgun': ['shotgun.wav']}
+                 'shotgun': ['shotgun.wav'],
+                 'ak': ['pistol.wav']}
 EFFECTS_SOUNDS = {'level_start': 'level_start.wav',
                   'health_up': 'health_pack.wav',
                   'gun_pickup': 'gun_pickup.wav'}

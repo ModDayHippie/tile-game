@@ -37,7 +37,7 @@ WEAPONS = {}
 WEAPONS['pistol'] = {'bullet_speed': 500,
                      'bullet_lifetime': 1000,
                      'rate': 250,
-                     'kickback': 200,
+                     'kickback': 50,
                      'spread': 5,
                      'damage': 10,
                      'bullet_size': 'lg',
@@ -85,7 +85,7 @@ BOB_SPEED = 0.4
 
 # Sounds
 BG_MUSIC = 'doom.mp3'
-PLAYER_HIT_SOUNDS = ['pain/8.wav', 'pain/9.wav', 'pain/10.wav', 'pain/11.wav']
+PLAYER_HIT_SOUNDS = ['pain/8.wav', 'pain/9.wav', 'pain/10.mp3', 'pain/11.wav']
 ZOMBIE_MOAN_SOUNDS = ['brains2.wav', 'brains3.wav', 'zombie-roar-1.wav', 'zombie-roar-2.wav',
                       'zombie-roar-3.wav', 'zombie-roar-5.wav', 'zombie-roar-6.wav', 'zombie-roar-7.wav']
 ZOMBIE_HIT_SOUNDS = ['splat-15.wav']

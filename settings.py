@@ -38,7 +38,7 @@ BULLET_IMG = 'bullet.png'
 BULLET_SPEED = 500
 BULLET_LIFETIME = 1000
 BULLET_RATE = 150
-KICKBACK = 200
+KICKBACK = 50
 GUN_SPREAD = 5
 BULLET_DAMAGE = 10
 
@@ -50,6 +50,12 @@ MOB_HEALTH = 50
 MOB_DAMAGE = 10
 MOB_KNOCKBACK = 20
 DETECT_RADIUS = 300
+
+# Item layers
+#ITEM_LAYER = 1
+
+# Items
+ITEM_IMAGES = {'health': 'health_pack.png'}
 
 # Sounds
 BG_MUSIC = "doom.mp3"

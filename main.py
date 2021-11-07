@@ -48,6 +48,10 @@ class Game:
         self.wall_img = pg.image.load(path.join(img_folder, WALL_IMG)).convert_alpha()
         self.wall_img = pg.transform.scale(self.wall_img, (TILESIZE, TILESIZE))
 
+        self.item_images = {}
+        for item in ITEM_IMAGES:
+            self.item_images[item] = pg.image.load(path.join(img_folder, ITEM_IMAGES[item])).convert_alpha()
+
         #sound loading
         pg.mixer.music.load(path.join(music_folder, BG_MUSIC))
         #for snd in PLAYER_HIT_SOUNDS:
@@ -58,6 +62,7 @@ class Game:
         self.all_sprites = pg.sprite.Group()
         self.walls = pg.sprite.Group()
         self.mobs = pg.sprite.Group()
+        self.items = pg.sprite.Group()
         self.bullets = pg.sprite.Group()
         # for row, tiles in enumerate(self.map.data):
         #     for col, tile in enumerate(tiles):
@@ -75,6 +80,8 @@ class Game:
             if tile_object.name == 'wall':
                 Obstacle(self, tile_object.x, tile_object.y,
                          tile_object.width, tile_object.height)
+            if tile_object.name in ['health']:
+                Item(self, tile_object, tile_object.name)
         self.camera = Camera(self.map.width, self.map.height)
         self.draw_debug = False
 

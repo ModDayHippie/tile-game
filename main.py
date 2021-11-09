@@ -114,7 +114,7 @@ class Game:
             if tile_object.name == 'wall':
                 Obstacle(self, tile_object.x, tile_object.y,
                          tile_object.width, tile_object.height)
-            if tile_object.name in ['health', 'shotgun', 'ak']:
+            if tile_object.name in ['health', 'shotgun', 'ak', 'mp5']:
                 Item(self, obj_center, tile_object.name)
         self.camera = Camera(self.map.width, self.map.height)
         self.draw_debug = False
@@ -159,6 +159,10 @@ class Game:
                     hit.kill()
                     self.effects_sounds['gun_pickup'].play()
                     self.player.weapon = 'ak'
+            if hit.type == 'mp5':
+                    hit.kill()
+                    self.effects_sounds['gun_pickup'].play()
+                    self.player.weapon = 'mp5  '
         # mobs hit player
         hits = pg.sprite.spritecollide(self.player, self.mobs, False, collide_hit_rect)
         for hit in hits:
